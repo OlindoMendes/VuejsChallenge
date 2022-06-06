@@ -13,7 +13,7 @@
         <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
           
           <div class="space-y-4 mb-4 px-4 sm:px-0">
-            <p>1) Será enviado um simples desafio em um projeto com vue.js 3 que deve ser entregue versionado em git em até 5 dias.</p>
+            <p>1) Será enviado um simples desafio em um projeto com vue.js 3 que deve ser entregue versionado em git no prazo solicitado na vaga.</p>
             <p>2) Será realizada uma avaliação da entrega e será marcada uma entrevista.</p>
             <p>3) Após entrevista o candidato(a), será avaliado perante os demais e este será contratado(a) ou ficará no banco de vagas.</p>
             <p>Se você é comprometido(a) com resultados e programar é algo que te faz perder a noção do tempo.... essa é a sua vaga. 😁🤗</p>
