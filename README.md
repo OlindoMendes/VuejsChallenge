@@ -1,6 +1,6 @@
 # SOBRE O DESAFIO VUE.JS #
 
-Prezado candidato(a), muito obrigado por participar deste processo seletivo e aceitar fazer o desafio. 
+Prezado candidato(a), muito obrigado por participar deste processo seletivo e aceitar fazer o desafio
 
 Podemos garantir que sua entrega será analisada e te retornaremos sobre o resultado do teste.
 
