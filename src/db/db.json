@@ -1,0 +1,54 @@
+{
+  "company":[
+    {
+      "id":1,
+      "name":  "E Inov",
+      "numbeEmployees": 100,
+      "country": "Brasil",
+      "category": "Setor de tecnologia"
+    },
+    {
+      "id":2,
+      "name":  "Nome da empresa 2",
+      "numbeEmployees": 50,
+      "country": "Reino Unido",
+      "category": "Setor agrícula"
+    },
+    {
+      "id":3,
+      "name":  "Nome da empresa 3",
+      "numbeEmployees": 50,
+      "country": "França",
+      "category": "Setor agrícula"
+    },
+    {
+      "id":4,
+      "name":  "Tesla",
+      "numbeEmployees": 50,
+      "country": "USA",
+      "category": "Setor automobilistico"
+    },
+    {
+      "id":5,
+      "name":  "Empresa 2",
+      "numbeEmployees": 50,
+      "country": "Portugal",
+      "category": "Setor educacional"
+    },
+    {
+      "id":7,
+      "name":  "Empresa 22",
+      "numbeEmployees": 50,
+      "country": "Portugal",
+      "category": "Setor educacional"
+    },
+    {
+      "id":10,
+      "name":  "Empresa 12",
+      "numbeEmployees": 50,
+      "country": "Portugal",
+      "category": "Setor educacional"
+    }
+  ]
+}
+    

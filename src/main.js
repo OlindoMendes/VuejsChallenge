@@ -13,7 +13,17 @@ const routes = [
     { 
         path: '/users', 
         name: 'users', 
-        component: () => import('./components/pages/UsersApp.vue') 
+        component: () => import('./components/UsersApp.vue') 
+    },
+    { 
+        path: '/company', 
+        name: 'company', 
+        component: () => import('./components/pages/CompanyApp.vue') 
+    },
+    { 
+        path: '/edituser', 
+        name: 'edit', 
+        component: () => import('./components/pages/EditUser.vue') 
     },
   ]
 

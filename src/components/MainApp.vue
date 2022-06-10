@@ -26,10 +26,11 @@
                 <nav class="mt-5 px-2 space-y-1">
 
                   <span v-for="item in navigation" :key="item.name">
-
+                  {{item }} - {{ navigation }}
+                    DSGFDFHDFHDHDDFGDFHGD
                     <router-link :to="item.router" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md">
                     <component :is="item.icon" :class="[item.current ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500', 'mr-4 flex-shrink-0 h-6 w-6']" aria-hidden="true" />
-                    {{ item.name }}
+                    {{ item.name }} DFHDHDHDHDHGDFHGFHF
                   </router-link>
 
                   </span>
@@ -102,11 +103,14 @@ import {
   MenuIcon,
   UsersIcon,
   XIcon,
+BriefcaseIcon
+
 } from '@heroicons/vue/outline'
 
 const navigation = [
   { name: 'Home', router: {name: 'home'}, icon: HomeIcon, current: true },
   { name: 'Usuários', router: {name: 'users'}, icon: UsersIcon, current: false },
+  { name: 'Empresas', router: {name: 'company'}, icon: BriefcaseIcon, current: false },
 ]
 
 const sidebarOpen = ref(false)
