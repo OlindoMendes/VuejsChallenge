@@ -44,7 +44,7 @@
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ person.data }}</td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ person.phone }}</td>
                   <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                    <router-link to="/edituser" class="text-indigo-600 hover:text-indigo-900" @click="editUser(person.id)">Editar<span class="sr-only"></span></router-link>
+                    <router-link :to="{ name: 'edituser', params:{ id: person.id }}" class="text-indigo-600 hover:text-indigo-900">Editar<span class="sr-only"></span></router-link>
                   </td>
                   <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                     <a href="#" class="text-red-600 hover:text-blue-900" @click="deleUser(person.id)">Excluir<span class="sr-only"></span></a>
@@ -62,6 +62,7 @@
 
 <script>
 import AddUser from './pages/AddUser.vue'
+import { mapGetters, mapActions, mapState} from 'vuex'
 export default {
   name: 'UsersApp',
   components:{
@@ -69,18 +70,14 @@ export default {
   },
   data() {
     return {
-      users: [
-        {id: 1, name: 'Fulano da Silva', company: 'E-Inov Soluções Tecnológicas', email: 'fulano.silva@example.com', data: '2022-01-05', phone:'9 999982' },
-        {id: 2, name: 'Fulano da Silva 2', company: 'E-Inov Soluções Tecnológicas', email: 'fulano.silva2@example.com', data: '2022-01-16', phone:'9 999982' },
-        {id: 3, name: 'Fulano da Silva 3', company: 'E-Inov Soluções Tecnológicas', email: 'fulano.silva3@example.com', data: '2022-01-27', phone:'9 999982' },
-        {id: 4, name: 'Fulano da Silva 4', company: '', email: 'fulano.silva4@example.com', data: '2022-02-09', phone:'9 999982' },
-        {id: 5, name: 'Beltrano da Silva', company: '', email: 'beltrano.silva@example.com', data: '2022-04-27', phone:'9 999982' },
-        {id: 6, name: 'Beltrano da Silva 2', company: 'Guest Posts', email: 'beltrano.silva2@example.com', data: '2022-04-29', phone:'9 999982' },
-        {id: 7, name: 'Beltrano da Silva 3', company: 'Guest Posts', email: 'beltrano.silva3@example.com', data: '2022-05-02', phone:'9 999982' },
-        {id: 8, name: 'Beltrano da Silva 4', company: 'Guest Posts', email: 'beltrano.silva4@example.com', data: '2022-05-27', phone:'9 999982' },
-      ],
       hideButton: true
     }
+  },
+  computed: {
+    ...mapGetters({
+      users: 'getUsers'
+    }),
+    ...mapState(['users.id'])
   },
   provide() {
     return {
@@ -89,8 +86,13 @@ export default {
     }
   },
   methods: {
+    ...mapActions({
+      addNewUser: 'addUser',
+      delete: 'deleteUser'
+    }),
     newUser() {
       // this.$router.push('/newuser')
+      console.log(this.users)
       this.hideButton = false
     },
     addUser(userName, userCompany, userEmail, data, phone) {
@@ -102,24 +104,12 @@ export default {
          data: data,
          phone:phone
       }
-      this.users.unshift(newUser)
+      this.addNewUser(newUser)
       this.hideButton = true
     },
     deleUser(id){
-      console.log(id)
-      this.users = this.users.filter(user => user.id !== id )
+      this.delete(id)
     },
-    editUser(id, name, email, company, date, phone){
-      this.users = this.users.filter(user => {
-        if(user.id === id){
-        user.name = name,
-        user.email = email,
-        user.company = company,
-        user.date = date,
-        user.phone = phone
-        }
-      } )
-    }
   }
 }
 

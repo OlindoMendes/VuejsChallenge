@@ -15,7 +15,7 @@
                 </label>
                 <input
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="company" type="text" v-model="company" placeholder="Username">
+                    id="company" type="text" v-model="company" placeholder="Empresa">
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
@@ -23,7 +23,7 @@
                 </label>
                 <input
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="email" type="email" v-model="email" placeholder="E=mail">
+                    id="email" type="email" v-model="email" placeholder="Email">
             </div>
              <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
@@ -31,7 +31,7 @@
                 </label>
                 <input
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="email" type="number" v-model="phone" placeholder="Phone Number">
+                    id="email" type="number" v-model.number="phone" placeholder="Celular">
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="date">
@@ -39,7 +39,7 @@
                 </label>
                 <input
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="date" type="date" v-model="date" placeholder="date">
+                    id="date" type="date" v-model="date" placeholder="Data">
             </div>
 
             <button class="inline-flex items-center justify-center rounded-md border border-transparent 
@@ -51,11 +51,12 @@
 
         </form>
     </div>
+    
 </template>
 <script>
+
 export default {
     name: "AddUser",
-    inject: ['User'],
     props:['hideForm', 'id' ],
     data() {
         return {
